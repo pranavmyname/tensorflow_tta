@@ -40,7 +40,7 @@ def get_deaug_images_v1(image):
     out = tf.math.reduce_mean(deaug_img, axis = 0)
     return out
 
-def img_with_tta(model, input):
+def infer_with_tta(model, input):
     """ Get output after performing test time augmentation
 
     Args:
