@@ -51,3 +51,31 @@ def infer_with_tta(model, input):
         tf.tensor: Model output 
     """
     return get_deaug_images_v1(model(get_aug_img_v1(input)))
+
+class TTAug(tf.keras.layers.Layer):
+    def __init__(self):
+        """Keras layer for augmentation
+        """
+        super().__init__()
+    
+    @tf.function
+    def get_aug_img_v1(self, img):
+        return get_aug_img_v1(img)
+
+    def call(self, image):
+        img_aug = self.get_aug_img_v1(image)
+        return img_aug
+  
+class TTDeAug(tf.keras.layers.Layer):
+    def __init__(self):
+        """ Keras layer for de-augmentation
+        """
+        super().__init__()
+    
+    @tf.function
+    def get_deaug_images_v1(self, img):
+        return get_deaug_images_v1(img)
+
+    def call(self, image):
+        img_deaug = self.get_deaug_images_v1(image)
+        return img_deaug
