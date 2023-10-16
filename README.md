@@ -1,5 +1,5 @@
 # tensorflow-tta
-Test time augmentation on Tensorflow models which utilizes GPU acceleration. Inspired from https://github.com/BloodAxe/pytorch-toolbelt for pytorch.
+**Tensorflow Test Time Augmentation**: Test time augmentation on Tensorflow models which utilizes GPU acceleration for segmentation models. Inspired from https://github.com/BloodAxe/pytorch-toolbelt for pytorch.
 To run the test time augmentation, simply run the following code:
 
 ```python
